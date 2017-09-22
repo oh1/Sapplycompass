@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Political Compass Project</title>
+        <link rel='shortcut icon' type='image/x-icon' href='icon.ico' />
+    </head>
+    
+  
+    
+    <style>
+        
+        @font-face
+        {
+                font-family: "Lora";
+                src: url('Lora-Regular.ttf'),
+                url('Lora-Regular.ttf'); /* IE */
+        }
+        @font-face
+        {
+            font-family: "Lato";
+            src: url('Lato-Regular.ttf'),
+            url('Lato-Regular.ttf'); /* IE */
+        }
+        @font-face
+        {
+            font-family: "Opensans";
+            src: url('OpenSans-Regular.ttf'),
+            url('OpenSans-Regular.ttf'); /* IE */
+        }
+        @font-face
+        {
+            font-family: "Raleway";
+            src: url('Raleway-Regular.ttf'),
+            url('Raleway-Regular.ttf'); /* IE */
+        }
+        @font-face
+        {
+            font-family: "Slabo";
+            src: url('Slabo27px-Regular.ttf'),
+            url('Slabo27px-Regular.ttf'); /* IE */
+        }
+        
+       
+        body {
+            background-image: url("stardust.png");
+        }
+        #main {
+            background-image: url("greyzz.png");
+            margin: auto;
+            height: 95%;
+            width: 130vh;
+            border-radius: 7px;
+            box-shadow: 8px 10px 4px #262626;
+        }
+        
+        h4 {
+            font-size: 15px;
+            font-family: Opensans;
+            margin-left: 20px;
+            padding-top: 10px;
+        }
+        
+        .questions {
+            margin-left: 40px;
+            font-family: "Raleway";
+            padding-bottom: 15px;
+        }
+        
+        #submit{
+            margin-top: 20px;
+            margin-left: 50px;
+            font-size: 20px;
+            font-family: "Lato";
+        }
+        
+        #civil{
+            text-decoration: underline;
+            color: dodgerblue;
+        }
+        
+        #civil:hover{
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+    </style>
+    
+    <body>
+        <div id="main">
+            <!-- You already knows what goes here. !-->
+           <h4> Onto part two: about the state and the people.</h4>
+            <h4><b>Answer as if you were living in the society you'd like everyone to live under, <br>not how people should do things in the society you currently live in.</b></h4>
+            
+        <div class="questions" id="que1">
+            <p>The government should be less involved in the day to day life of its citizens.</p>
+            <select id="selector1">
+                <option value=17.333>Strongly agree</option>
+                <option value=8.666>Kinda agree</option>
+                <option selected="selected" value="0">No opinion either way</option>
+                <option value=-8.666>Kinda disagree</option>
+                <option value=-17.333>Strongly disagree</option>
+            
+            </select>
+            
+        </div>
+        <div class="questions" id="que2">
+            <p>Sometimes it is right that the government may spy on its citizens, to combat extremists and terrorists.</p>
+            
+            <select id="selector2">
+                <option value=-17.333>Strongly agree</option>
+                <option value=-8.666>Kinda agree</option>
+                <option selected="selected" value="0">No opinion either way</option>
+                <option value=8.666>Kinda disagree</option>
+                <option value=17.333>Strongly disagree</option>
+            
+            </select>
+        </div>
+        <div class="questions" id="que3">
+            <p>Authority figures, if morally correct, are a good thing for society.</p>
+            
+            <select id="selector3">
+                <option value=-17.333>Strongly agree</option>
+                <option value=-8.666>Kinda agree</option>
+                <option selected="selected" value="0">No opinion either way</option>
+                <option value=8.666>Kinda disagree</option>
+                <option value=17.333>Strongly disagree</option>
+            
+            </select>
+        </div>
+        <div class="questions" id="que4">
+            <p>Strength is necessary for any government to succeed.</p>
+            
+            <select id="selector4">
+                <option value=-17.333>Strongly agree</option>
+                <option value=-8.666>Kinda agree</option>
+                <option selected="selected" value="0">No opinion either way</option>
+                <option value=8.666>Kinda disagree</option>
+                <option value=17.333>Strongly disagree</option>
+            
+            </select>
+        </div>
+        <div class="questions" id="que5">
+            <p>Only the government can fairly and effectively regulate organisations.</p>
+            
+            <select id="selector5">
+                <option value=-17.333>Strongly agree</option>
+                <option value=-8.666>Kinda agree</option>
+                <option selected="selected" value="0">No opinion either way</option>
+                <option value=8.666>Kinda disagree</option>
+                <option value=17.333>Strongly disagree</option>
+            
+            </select>
+        </div>
+        <div class="questions" id="que6">
+            <p>Without democracy a society is nothing.</p>
+            
+            <select id="selector6">
+                <option value=17.333>Strongly agree</option>
+                <option value=8.666>Kinda agree</option>
+                <option selected="selected" value="0">No opinion either way</option>
+                <option value=-8.666>Kinda disagree</option>
+                <option value=-17.333>Strongly disagree</option>
+            
+            </select>
+        </div>
+        <div class="questions" id="que7">
+            <p>Jury Nullification<span id="civil">(?)</span> should be legal.</p>
+            
+            <select id="selector7">
+                <option value=17.333>Strongly agree</option>
+                <option value=8.666>Kinda agree</option>
+                <option selected="selected" value="0">No opinion either way</option>
+                <option value=-8.666>Kinda disagree</option>
+                <option value=-17.333>Strongly disagree</option>
+            
+            </select>
+        </div>
+        <div class="questions" id="que8">
+            <p>The smaller the government, the freer the people.</p>
+            
+            <select id="selector8">
+                <option value=17.333>Strongly agree</option>
+                <option value=8.666>Kinda agree</option>
+                <option selected="selected" value="0">No opinion either way</option>
+                <option value=-8.666>Kinda disagree</option>
+                <option value=-17.333>Strongly disagree</option>
+            
+            </select>
+        </div>
+        <div class="questions" id="que9">
+            <p>As things are right now, society requires structure and bureaucracy in order to function.</p>
+            
+            <select id="selector9">
+                <option value=-17.333>Strongly agree</option>
+                <option value=-8.666>Kinda agree</option>
+                <option selected="selected" value="0">No opinion either way</option>
+                <option value=8.666>Kinda disagree</option>
+                <option value=17.333>Strongly disagree</option>
+            
+            </select>
+        </div>
+        <div class="questions" id="que10">
+            <p>Mandatory IDs should be used to ensure public safety.</p>
+            
+            <select id="selector10">
+                <option value=-17.333>Strongly agree</option>
+                <option value=-8.666>Kinda agree</option>
+                <option selected="selected" value="0">No opinion either way</option>
+                <option value=8.666>Kinda disagree</option>
+                <option value=17.333>Strongly disagree</option>
+            
+            </select>
+        </div>
+        <div class="questions" id="que11">
+            <p>The government should only provide emergency services and law enforcement, no more.</p>
+            
+            <select id="selector11">
+                <option value=17.333>Strongly agree</option>
+                <option value=8.666>Kinda agree</option>
+                <option selected="selected" value="0">No opinion either way</option>
+                <option value=-8.666>Kinda disagree</option>
+                <option value=-17.333>Strongly disagree</option>
+            
+            </select>
+        </div>    
+        <div class="questions" id="que12">
+            <p>In times of crisis, safety becomes more important than civil liberties.</p>
+            
+            <select id="selector12">
+                <option value=-17.333>Strongly agree</option>
+                <option value=-8.666>Kinda agree</option>
+                <option selected="selected" value="0">No opinion either way</option>
+                <option value=8.666>Kinda disagree</option>
+                <option value=17.333>Strongly disagree</option>
+            
+            </select>
+        </div>    
+        <div class="questions" id="que13">
+            <p>The police was not made to protect the people, but to uphold the status-quo by force.</p>
+            
+            <select id="selector13">
+                <option value=17.333>Strongly agree</option>
+                <option value=8.666>Kinda agree</option>
+                <option selected="selected" value="0">No opinion either way</option>
+                <option value=-8.666>Kinda disagree</option>
+                <option value=-17.333>Strongly disagree</option>
+            
+            </select>
+        </div>
+        <div class="questions" id="que14">
+            <p>State schools are a bad idea, because our state shouldn't be influencing our children.</p>
+            
+            <select id="selector14">
+                <option value=17.333>Strongly agree</option>
+                <option value=8.666>Kinda agree</option>
+                <option selected="selected" value="0">No opinion either way</option>
+                <option value=-8.666>Kinda disagree</option>
+                <option value=-17.333>Strongly disagree</option>
+            
+            </select>
+        </div>
+        <div class="questions" id="que15">
+            <p>If you have nothing to hide, you have nothing to fear.</p>
+            
+            <select id="selector15">
+                <option value=-17.333>Strongly agree</option>
+                <option value=-8.666>Kinda agree</option>
+                <option selected="selected" value="0">No opinion either way</option>
+                <option value=8.666>Kinda disagree</option>
+                <option value=17.333>Strongly disagree</option>
+            
+            </select>   
+        </div>
+            
+            
+            <a href="thequiz3.html"><button id="submit">Submit</button></a>
+        
+        </div>
+    </body>
+    
+      <script>
+        window.onload = start;
+        document.getElementById("submit").onclick = ulclick;
+        document.getElementById("civil").onclick = alertClick;
+        
+        
+        function start()
+        {
+            //This is where you call functions and put general document editing code.
+            //var select = document.getElementById("selector1");
+            //alert ( select.options[select.selectedIndex].value)
+            
+            createPara("", "p1")
+        }
+          
+        function alertClick()
+          {
+              alert("Jury Nullification is, simply put, the act of a jury ruling a convict innocent despite the evidence proving them guilty. This is done in protest to an unfair law, but currently it's indirectly illegal to do so in most countries.")
+          }
+        
+         function createPara(text, id)
+                //Very imporant function to reduce time wasted making paragraphs manually!
+            {
+                var para = document.createElement("p");
+                var t = document.createTextNode(text);
+                para.appendChild(t);
+                document.getElementById("main").appendChild(para);
+                para.id = id;
+            }
+          
+        function ulclick()
+          {
+            var scoreUp = calculate()
+            
+            sessionStorage.setItem('scoreUp', scoreUp);
+          }
+          
+        function calculate()
+        {
+            
+            var select = document.getElementById("selector1");
+            var select2 = document.getElementById("selector2");
+            var select3 = document.getElementById("selector3");
+            var select4 = document.getElementById("selector4");
+            var select5 = document.getElementById("selector5");
+            var select6 = document.getElementById("selector6");
+            var select7 = document.getElementById("selector7");
+            var select8 = document.getElementById("selector8");
+            var select9 = document.getElementById("selector9");
+            var select10 = document.getElementById("selector10");
+            var select11 = document.getElementById("selector11");
+            var select12 = document.getElementById("selector12");
+            var select13 = document.getElementById("selector13");
+            var select14 = document.getElementById("selector14");
+            var select15 = document.getElementById("selector15");
+            
+           return parseFloat(select.options[select.selectedIndex].value)+ parseFloat(select2.options[select2.selectedIndex].value) + parseFloat(select3.options[select3.selectedIndex].value) + parseFloat(select4.options[select4.selectedIndex].value) + parseFloat(select5.options[select5.selectedIndex].value) + parseFloat(select6.options[select6.selectedIndex].value) + parseFloat(select7.options[select7.selectedIndex].value) + parseFloat(select8.options[select8.selectedIndex].value) + parseFloat(select9.options[select9.selectedIndex].value) + parseFloat(select10.options[select10.selectedIndex].value) + parseFloat(select11.options[select11.selectedIndex].value) + parseFloat(select12.options[select12.selectedIndex].value) + parseFloat(select13.options[select13.selectedIndex].value) + parseFloat(select14.options[select14.selectedIndex].value) + parseFloat(select15.options[select15.selectedIndex].value);
+            
+            
+        };
+          
+       
+        //The rest of the functions go here
+    </script>
+    <script src="//static.getclicky.com/js" type="text/javascript"></script>
+<script type="text/javascript">try{ clicky.init(101050272); }catch(e){}</script>
+    
+</html>
+
+<!-- I love IT! !-->

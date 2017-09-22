@@ -1,0 +1,244 @@
+    <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Political Compass Project</title>
+        <link rel='shortcut icon' type='image/x-icon' href='icon.ico' />
+    </head>
+    
+    <script>
+        window.onload = start;
+        
+        var zero = 408;
+        var getScoreLeft = sessionStorage.getItem('scoreLeft')
+        var getScoreUp = sessionStorage.getItem('scoreUp')
+        var getScoreGood = sessionStorage.getItem('scoreGood')
+        
+        var intLeft = parseInt(getScoreLeft);
+        var intUp = parseInt(getScoreUp);
+        var intGood = parseInt(getScoreGood);
+        
+        function start()
+        {
+            //This is where you call functions and put general document editing code.
+            
+            //Center is 408x330
+            //all the way to the left is 145, right is 670
+            //space between each crosssection is 26.3
+            //space between sides and centre is 263
+            //17.533 * 15 (the amount of questions) = all the way to the left
+            //midway between sides and centre is 408+-131.5
+            //for the left this is 276.5
+            //value for "agree" is just 8.7666
+            //top is 68, bottom is 590
+            //Thats 260 between the middle and the extremes
+            //which means space between each cross is 26
+            //meaning 'strongly agree' must be 17.333 for the numbers to go up
+            //agree then becomes 8,666
+            var can = document.getElementById("canvas")
+            var dot = can.getContext("2d");
+            var line = can.getContext("2d");
+            dot.beginPath();
+            dot.arc(getX(),getY(),15,0,2*Math.PI);
+            dot.fillStyle = 'red';
+            dot.fill();
+            dot.stroke();
+            
+            line.beginPath();
+            line.moveTo(895, getZ());
+            line.lineTo(954, getZ());
+            line.lineWidth = 5;
+            line.strokeStyle = "red";
+            line.stroke();
+            
+            document.getElementById('xScore').innerHTML = calcX(getX());
+            document.getElementById('yScore').innerHTML = calcY(getY());
+            document.getElementById('zScore').innerHTML = calcZ(getZ());
+            
+        }
+        
+        function getZ()
+        {
+            
+            return 319 + intGood;
+        }
+        
+        function getX()
+        {
+            
+            return 408 + intLeft;
+        }
+        
+        function getY()
+        {
+            
+            return 329 + intUp;
+        }
+        
+        function calcX(x){
+            var sum = x-408
+            
+            sum = sum/26.6
+            
+            sum = Math.round(sum*10)/10
+            
+            return sum
+            
+        }
+        
+        function calcY(x){
+            var sum = x-329
+            
+            sum = sum/26
+            
+            sum = Math.round(sum*10)/10
+            
+            return sum
+        }
+        
+        function calcZ(x){
+            var sum = x-319
+            
+            sum = sum/16.187
+            
+            sum = Math.round(sum*10)/10
+            
+            sum = sum*(-1)
+            
+            return sum
+        }
+        
+         function createPara(text, id)
+                //Very imporant function to reduce time wasted making paragraphs manually!
+            {
+                var para = document.createElement("p");
+                var t = document.createTextNode(text);
+                para.appendChild(t);
+                document.getElementById("main").appendChild(para);
+                para.id = id;
+            } 
+        //The rest of the functions go here
+    </script>
+    
+    <style>
+        
+        @font-face
+        {
+                font-family: "Lora";
+                src: url('Lora-Regular.ttf'),
+                url('Lora-Regular.ttf'); /* IE */
+        }
+        @font-face
+        {
+            font-family: "Lato";
+            src: url('Lato-Regular.ttf'),
+            url('Lato-Regular.ttf'); /* IE */
+        }
+        @font-face
+        {
+            font-family: "Opensans";
+            src: url('OpenSans-Regular.ttf'),
+            url('OpenSans-Regular.ttf'); /* IE */
+        }
+        @font-face
+        {
+            font-family: "Raleway";
+            src: url('Raleway-Regular'),
+            url('Raleway-Regular'); /* IE */
+        }
+        @font-face
+        {
+            font-family: "Slabo";
+            src: url('Slabo27px-Regular.ttf'),
+            url('Slabo27px-Regular.ttf'); /* IE */
+        }
+        
+       
+        body {
+            background-image: url("stardust.png");
+        }
+        #main {
+            display: inline-block;
+            background-image: url("greyzz.png");
+            margin: auto;
+            height: 1190px;
+            width: 170vh;
+            border-radius: 7px;
+            box-shadow: 8px 10px 4px #262626;
+        }
+        #canvas {
+            opacity: 1;
+            background-image: url("poltiicalcompasssmall2.png");
+        }
+        h2 {
+            font-family: Opensans;
+        }
+        
+        h3{
+            font-family: Opensans;
+            margin-left: 20px;
+        }
+        
+        #whatareyou{
+            margin-left: 30px;
+            border-radius: 10px;
+            width: 850px;
+            height: 400px;
+            border-style: solid;
+        }
+        
+        #scores{
+            margin-left: -3px;
+            width: 320px;
+            text-align: center;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+            #xValue{
+                font-size: 23px;
+                display: inline;
+                font-family: Lato;
+
+            }
+
+            #yValue{
+                font-size: 23px;
+                display: inline;
+                font-family: Lato;
+            
+        }
+        
+        #zValue{
+            font-size: 23px;
+            display: inline;
+            font-family: Lato;
+        }
+        
+    </style>
+    
+    <body>
+        <div id="main">
+            <div id="results">
+            <h3>Your results:</h3>
+            <canvas id="canvas" height="658" width="1000"></canvas>
+            </div>
+            
+            <div id="whatareyou">
+                <div id='scores'>
+                <p id='xValue'>Your X-score is: <span id='xScore'></span></p> <br>
+                <p id='yValue'>Your Y-score is: <span id='yScore'></span></p>
+                <br>
+                <p id='zValue'>Your Progressive score is: <span id="zScore"></span></p>
+                </div>
+                
+                <div id='explanation'>
+                   <!-- <p id='title'>You are: <span id='youare'></span></p> !-->
+                </div>
+            </div>
+        
+        </div>
+    </body>
+    
+</html>
+
+<!-- I love IT! !-->
